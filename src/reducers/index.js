@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import manifestByRover from './manifest-reducer';
 
 const rootReducer = combineReducers({
-    state: (state = {}) => state
+    manifestByRover
 });
 
 export default rootReducer;
