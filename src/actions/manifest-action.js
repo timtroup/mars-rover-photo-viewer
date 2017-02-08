@@ -16,8 +16,8 @@ export const receiveManifest = (rover, json) => ({
     receivedAt: Date.now()
 });
 
-export const fetchManifest = rover => {
-    dispatch(requestManifest(rover))
+export const fetchManifest = rover => dispatch => {
+    dispatch(requestManifest(rover));
     return fetch(`${ROOT_URL}/${rover}?api_key=${API_KEY}`)
         .then(response => response.json())
         .then(json => dispatch(receiveManifest(rover, json)))
