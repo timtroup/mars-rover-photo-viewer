@@ -4,15 +4,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle.[hash].js',
         publicPath: '/',
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Mars Rover Photo Viewer',
-            template: 'index.html',
-            hash: true
+            template: 'index.html'
         })
     ],
     devtool: 'inline-source-map',
