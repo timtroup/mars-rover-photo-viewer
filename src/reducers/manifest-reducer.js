@@ -1,9 +1,8 @@
-import { REQUEST_MANIFEST, RECEIVE_MANIFEST } from '../actions/manifest-action'
+import {REQUEST_MANIFEST, RECEIVE_MANIFEST} from '../actions/manifest-action'
 
 const manifest = (state = {
     isFetching: false,
-    didInvalidate: false,
-    items: []
+    didInvalidate: false
 }, action) => {
     switch (action.type) {
         case REQUEST_MANIFEST:
@@ -25,7 +24,7 @@ const manifest = (state = {
     }
 };
 
-const manifestByRover = (state = { }, action) => {
+const manifestByRover = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_MANIFEST:
         case REQUEST_MANIFEST:
