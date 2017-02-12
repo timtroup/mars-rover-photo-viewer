@@ -20,9 +20,10 @@ class RoverList extends Component {
     }
 
     render() {
+        const { selectedRover } = this.props
         return (
             <RoverPicker
-                value="curiosity"
+                value={selectedRover}
                 onChange={this.handleChange}
                 options={['curiosity', 'opportunity', 'spirit']}
             />
@@ -32,7 +33,10 @@ class RoverList extends Component {
 
 const mapStateToProps = state => {
 
+    const { selectedRover } = state
+
     return {
+        selectedRover
     }
 };
 
