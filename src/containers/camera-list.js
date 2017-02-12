@@ -26,6 +26,7 @@ class CameraList extends Component {
                 value={selectedCamera}
                 onChange={this.handleChange}
                 options={[
+                    {abbreviation: 'ALL', camera: 'All Cameras'},
                     {abbreviation: 'FHAZ', camera: 'Front Hazard Avoidance Camera'},
                     {abbreviation: 'RHAZ', camera: 'Rear Hazard Avoidance Camera'},
                     {abbreviation: 'MAST', camera: 'Mast Camera'},
@@ -42,7 +43,7 @@ class CameraList extends Component {
 }
 
 const mapStateToProps = state => {
-    const { selectedCamera } = state
+    const { selectedCamera } = state;
 
     return {
         selectedCamera

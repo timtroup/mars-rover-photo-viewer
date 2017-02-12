@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import {fetchManifest} from '../actions/manifest-action';
-import {fetchPhotos} from '../actions/photos-action';
 import ImageList from '../containers/image-list';
 import DateSelector from '../containers/date-selector';
 import RoverList from '../containers/rover-list';
@@ -13,12 +12,11 @@ class App extends Component {
         dispatch: PropTypes.func.isRequired
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const { dispatch } = this.props;
         dispatch(fetchManifest('curiosity'));
         dispatch(fetchManifest('opportunity'));
         dispatch(fetchManifest('spirit'));
-        dispatch(fetchPhotos('curiosity', '1000', 'fhaz'));
     }
 
     render() {

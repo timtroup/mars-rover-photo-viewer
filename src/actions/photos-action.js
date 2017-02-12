@@ -17,7 +17,14 @@ export const receivePhotos = (json) => ({
 
 export const fetchPhotos = (rover, sol, camera) => dispatch => {
     dispatch(requestPhotos(rover));
-    return fetch(`${ROOT_URL}/${rover}/photos?earth_date=${sol}&camera=${camera}&api_key=${API_KEY}`)
+
+    let url = `${ROOT_URL}/${rover}/photos?earth_date=${sol}`;
+    if(camera !== 'ALL') {
+        url = url + `&camera=${camera}`;
+    }
+    url = url + `&api_key=${API_KEY}`;
+
+    return fetch(url)
         .then(response => response.json())
         .then(json => dispatch(receivePhotos(json)))
 };
