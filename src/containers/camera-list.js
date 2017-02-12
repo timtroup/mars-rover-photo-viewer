@@ -20,9 +20,10 @@ class CameraList extends Component {
     }
 
     render() {
+        const { selectedCamera } = this.props;
         return (
             <CameraPicker
-                value=""
+                value={selectedCamera}
                 onChange={this.handleChange}
                 options={[
                     {abbreviation: 'FHAZ', camera: 'Front Hazard Avoidance Camera'},
@@ -41,8 +42,10 @@ class CameraList extends Component {
 }
 
 const mapStateToProps = state => {
+    const { selectedCamera } = state
 
     return {
+        selectedCamera
     }
 };
 

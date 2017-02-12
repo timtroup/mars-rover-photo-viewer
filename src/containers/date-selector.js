@@ -20,8 +20,10 @@ class DateSelector extends Component {
     }
 
     render() {
+        const { selectedDate } = this.props;
         return (
             <DatePicker
+                selected={selectedDate}
                 onChange={this.handleChange}
                 showMonthDropdown
                 showYearDropdown
@@ -31,8 +33,11 @@ class DateSelector extends Component {
 }
 
 const mapStateToProps = state => {
+    const { selectedDate } = state
 
-    return {}
+    return {
+        selectedDate: moment(selectedDate)
+    }
 };
 
 export default connect(mapStateToProps)(DateSelector);
