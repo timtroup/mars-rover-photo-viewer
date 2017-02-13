@@ -6,6 +6,7 @@ import DateSelector from '../containers/date-selector';
 import RoverList from '../containers/rover-list';
 import CameraList from '../containers/camera-list';
 import FindPhotos from '../containers/find-photos';
+import RoverInfo from '../containers/rover-info';
 
 class App extends Component {
     static propTypes = {
@@ -26,6 +27,7 @@ class App extends Component {
                 <DateSelector />
                 <CameraList />
                 <FindPhotos />
+                <RoverInfo />
                 <ImageList />
             </div>
         );
