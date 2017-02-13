@@ -23,6 +23,7 @@ class DateSelector extends Component {
         const { selectedDate } = this.props;
         return (
             <DatePicker
+                dateFormat="DD/MM/YYYY"
                 selected={selectedDate}
                 onChange={this.handleChange}
                 showMonthDropdown
