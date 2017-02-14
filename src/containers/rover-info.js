@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment';
+import { Table } from 'react-bootstrap';
 
 class RoverInfo extends Component {
 
@@ -17,34 +18,34 @@ class RoverInfo extends Component {
 
         if(name) {
             return (
-                <table className="table table-striped">
+                <Table striped bordered condensed hover>
                     <tbody>
                     <tr>
-                        <td>Name</td>
+                        <td><strong>Name</strong></td>
                         <td>{name}</td>
                     </tr>
                     <tr>
-                        <td>Launch Date (DD/MM/YYYY)</td>
+                        <td><strong>Launch Date (DD/MM/YYYY)</strong></td>
                         <td>{launch_date}</td>
                     </tr>
                     <tr>
-                        <td>Landing Date (DD/MM/YYYY)</td>
+                        <td><strong>Landing Date (DD/MM/YYYY)</strong></td>
                         <td>{landing_date}</td>
                     </tr>
                     <tr>
-                        <td>Status</td>
+                        <td><strong>Status</strong></td>
                         <td>{status}</td>
                     </tr>
                     <tr>
-                        <td>Total photos</td>
+                        <td><strong>Total photos</strong></td>
                         <td>{total_photos}</td>
                     </tr>
                     <tr>
-                        <td>Latest photo taken (DD/MM/YYYY)</td>
+                        <td><strong>Latest photo taken (DD/MM/YYYY)</strong></td>
                         <td>{max_date}</td>
                     </tr>
                     </tbody>
-                </table>
+                </Table>
             );
         } else {
             return (

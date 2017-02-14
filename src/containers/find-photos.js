@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {fetchPhotos} from '../actions/photos-action';
+import {Button, Glyphicon} from 'react-bootstrap';
 
 class FindPhotos extends Component {
 
@@ -13,16 +14,19 @@ class FindPhotos extends Component {
     }
 
     render() {
-        const { selectedRover, selectedCamera, selectedDate, dispatch } = this.props
+        const { selectedRover, selectedCamera, selectedDate, dispatch } = this.props;
         return (
-            <button onClick={() => dispatch(fetchPhotos(selectedRover, selectedDate, selectedCamera))}>Find Photos</button>
+            <Button bsStyle="primary"
+                onClick={() => dispatch(fetchPhotos(selectedRover, selectedDate, selectedCamera))}>
+                <Glyphicon glyph="search" />
+                Find Photos</Button>
         );
     }
 }
 
 const mapStateToProps = state => {
 
-    const { selectedRover, selectedCamera, selectedDate } = state
+    const { selectedRover, selectedCamera, selectedDate } = state;
 
     return {
         selectedRover,
