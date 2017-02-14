@@ -7,7 +7,7 @@ import RoverList from '../containers/rover-list';
 import CameraList from '../containers/camera-list';
 import FindPhotos from '../containers/find-photos';
 import RoverInfo from '../containers/rover-info';
-import {Grid, Row, Col, Popover, OverlayTrigger, Button} from 'react-bootstrap';
+import {Grid, Row, Col, Popover, OverlayTrigger, Button, Glyphicon} from 'react-bootstrap';
 
 class App extends Component {
     static propTypes = {
@@ -39,7 +39,7 @@ class App extends Component {
                     </Col>
                     <Col md="1">
                         <OverlayTrigger container={this} trigger="click" placement="bottom" overlay={roverInfoPopover}>
-                            <Button><span className="glyphicon glyphicon-info-sign" /></Button>
+                            <Button><Glyphicon glyph="info-sign" /></Button>
                         </OverlayTrigger>
                     </Col>
                     <Col md="2">
