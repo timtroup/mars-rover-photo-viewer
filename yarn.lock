@@ -3430,7 +3430,7 @@ react-onclickoutside@^5.7.1:
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-5.9.0.tgz#c47bb506384adc98d686d134b34412ed17b97437"
 
-react-overlays@^0.6.10:
+react-overlays@^0.6.10, react-overlays@^0.6.11:
   version "0.6.11"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.6.11.tgz#30689e813b0e1a000f24baee0f8a4a318a1a4232"
   dependencies:
