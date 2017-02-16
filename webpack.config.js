@@ -2,7 +2,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: ['babel-polyfill', 'whatwg-fetch', './src/index.js'],
     output: {
         filename: 'bundle.[hash].js',
         publicPath: '/',
