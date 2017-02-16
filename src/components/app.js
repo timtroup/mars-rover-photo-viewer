@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import {fetchManifest} from '../actions/manifest-action';
-import ImageList from '../containers/image-list';
+import ImageGallery from '../containers/image-gallery';
 import DateSelector from '../containers/date-selector';
 import RoverList from '../containers/rover-list';
 import CameraList from '../containers/camera-list';
@@ -58,7 +58,7 @@ class App extends Component {
                     </AutoAffix>
                 </Row>
                 <Row>
-                    <ImageList />
+                    <ImageGallery />
                 </Row>
             </Grid>
         );

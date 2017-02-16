@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {fetchPhotos} from '../actions/photos-action';
+import {preloadPhotos} from '../actions/preload-photo-action';
 import {Button, Glyphicon} from 'react-bootstrap';
 
 class FindPhotos extends Component {
@@ -17,7 +18,10 @@ class FindPhotos extends Component {
         const { selectedRover, selectedCamera, selectedDate, dispatch } = this.props;
         return (
             <Button bsStyle="primary"
-                onClick={() => dispatch(fetchPhotos(selectedRover, selectedDate, selectedCamera))}>
+                onClick={() => dispatch(fetchPhotos(selectedRover, selectedDate, selectedCamera))
+                    .then(json => {
+                        dispatch(preloadPhotos(json.photos, 0, 25))
+                    })}>
                 <Glyphicon glyph="search" />
                 Find Photos</Button>
         );
