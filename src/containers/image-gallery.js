@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Lightbox from 'react-images';
 import Gallery from 'react-photo-gallery';
+import Spinner from 'react-spin';
 
 class ImageGallery extends Component{
 
@@ -24,28 +25,29 @@ class ImageGallery extends Component{
 
     render(){
         // no loading sign if its all loaded
-        if (this.props.photos.length && this.state.loadedAll){
+        if (this.props.photos.length && !this.props.isFetching){
             return(
                 <div>
                     {this.renderGallery()}
                 </div>
             );
         }
-        else if (this.props.photos.length){
-            // this.loadMorePhotos();
-            return(
+        else if (this.props.isFetching){
+
+            var spinCfg = {
+                length: 28,
+                width: 10,
+                radius: 42
+            };
+            return (
                 <div>
-                    {this.renderGallery()}
-                    <div className="loading-msg" id="msg-loading-more">Loading</div>
+                    <br/><br/><br/><br/>
+                    <Spinner config={spinCfg} />
                 </div>
             );
         }
         else{
-            return(
-                <div>
-                    <div id="msg-app-loading" className="loading-msg">Loading</div>
-                </div>
-            );
+            return(<div/>);
         }
     }
 }
@@ -53,7 +55,8 @@ class ImageGallery extends Component{
 function mapStateToProps(state) {
 
     return {
-        photos: state.photoGalleryData.data
+        photos: state.photoGalleryData.data,
+        isFetching: state.photoGalleryData.isFetching || state.photos.isFetching
     }
 }
 
