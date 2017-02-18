@@ -2,7 +2,7 @@ export const REQUEST_MANIFEST = 'REQUEST_MANIFEST';
 export const RECEIVE_MANIFEST = 'RECEIVE_MANIFEST';
 
 const API_KEY = 'Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn';
-const ROOT_URL =`http://api.nasa.gov/mars-photos/api/v1/manifests`;
+const ROOT_URL =`https://api.nasa.gov/mars-photos/api/v1/manifests`;
 
 export const requestManifest = rover => ({
     type: REQUEST_MANIFEST,
