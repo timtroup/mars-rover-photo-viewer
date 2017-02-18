@@ -1,5 +1,6 @@
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
     entry: ['babel-polyfill', 'whatwg-fetch', './src/index.js'],
@@ -12,6 +13,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Mars Rover Photo Viewer',
             template: 'index.html'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false // https://github.com/webpack/webpack/issues/1496
+            },
+            sourceMap: true
         })
     ],
     devtool: 'inline-source-map',
