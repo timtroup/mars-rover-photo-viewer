@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import {selectDate} from '../actions/select-date-action';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -20,24 +19,42 @@ class DateSelector extends Component {
     }
 
     render() {
-        const { selectedDate } = this.props;
-        return (
-            <DatePicker
-                dateFormat="DD/MM/YYYY"
-                selected={selectedDate}
-                onChange={this.handleChange}
-                showMonthDropdown
-                showYearDropdown
-                scrollableYearDropdown/>
-        );
+        const { selectedDate, selectedRover, manifestByRover } = this.props;
+
+        if(manifestByRover[selectedRover].photo_manifest) {
+            return (
+                <DatePicker
+                    dateFormat="DD/MM/YYYY"
+                    selected={selectedDate}
+                    onChange={this.handleChange}
+                    minDate={manifestByRover[selectedRover].photo_manifest.landing_date}
+                    maxDate={manifestByRover[selectedRover].photo_manifest.max_date}
+                    showMonthDropdown
+                    showYearDropdown
+                    scrollableYearDropdown/>
+            );
+        } else {
+            return (
+                <DatePicker
+                    dateFormat="DD/MM/YYYY"
+                    selected={selectedDate}
+                    onChange={this.handleChange}
+                    showMonthDropdown
+                    showYearDropdown
+                    scrollableYearDropdown/>
+            );
+
+        }
     }
 }
 
 const mapStateToProps = state => {
-    const { selectedDate } = state
+    const { selectedDate, selectedRover, manifestByRover } = state;
 
     return {
-        selectedDate: moment(selectedDate)
+        selectedDate: moment(selectedDate),
+        selectedRover,
+        manifestByRover
     }
 };
 

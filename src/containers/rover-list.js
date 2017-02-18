@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {selectRover} from '../actions/select-rover-action';
+import {selectDate} from '../actions/select-date-action';
 import RoverPicker from '../components/rover-picker';
 
 class RoverList extends Component {
@@ -15,12 +16,13 @@ class RoverList extends Component {
     }
 
     handleChange(rover) {
-        const { dispatch } = this.props;
+        const { dispatch, manifestByRover } = this.props;
         dispatch(selectRover(rover));
+        dispatch(selectDate(manifestByRover[rover].photo_manifest.max_date));
     }
 
     render() {
-        const { selectedRover } = this.props
+        const { selectedRover } = this.props;
         return (
             <RoverPicker
                 value={selectedRover}
@@ -33,10 +35,11 @@ class RoverList extends Component {
 
 const mapStateToProps = state => {
 
-    const { selectedRover } = state
+    const { selectedRover, manifestByRover } = state;
 
     return {
-        selectedRover
+        selectedRover,
+        manifestByRover
     }
 };
 
