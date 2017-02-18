@@ -19,6 +19,16 @@ export const receiveManifest = (rover, json) => ({
 export const fetchManifest = rover => dispatch => {
     dispatch(requestManifest(rover));
     return fetch(`${ROOT_URL}/${rover}?api_key=${API_KEY}`)
+        .then(response => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
         .then(response => response.json())
         .then(json => dispatch(receiveManifest(rover, json)))
+        .catch(function(error) {
+            console.log(error);
+            return dispatch(receiveManifest(rover, {photo_manifest: {}}))
+        })
 };

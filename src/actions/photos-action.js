@@ -25,6 +25,15 @@ export const fetchPhotos = (rover, sol, camera) => dispatch => {
     url = url + `&api_key=${API_KEY}`;
 
     return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
         .then(response => response.json())
         .then(json => dispatch(receivePhotos(json)))
+        .catch(function(error) {
+            return dispatch(receivePhotos({photos:[]}));
+        })
 };

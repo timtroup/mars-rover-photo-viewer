@@ -47,7 +47,11 @@ class ImageGallery extends Component{
             );
         }
         else{
-            return(<div/>);
+            return(
+                <div>
+                    <h2>No photos to display</h2>
+                </div>
+            );
         }
     }
 }
