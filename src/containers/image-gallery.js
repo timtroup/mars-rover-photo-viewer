@@ -32,6 +32,7 @@ class ImageGallery extends Component{
                     {this.renderGallery()}
                     <div>
                         <LoadMoreResults />
+                        <br/><br/><br/><br/>
                     </div>
                 </div>
             );

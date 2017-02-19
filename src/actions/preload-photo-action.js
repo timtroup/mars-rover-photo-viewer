@@ -1,7 +1,6 @@
 export const REQUEST_PRELOAD_PHOTOS = 'REQUEST_PRELOAD_PHOTOS';
 export const RECEIVE_PRELOAD_PHOTOS = 'RECEIVE_PRELOAD_PHOTOS';
 import React from 'react';
-import 'font-awesome/css/font-awesome.css';
 
 export const requestPreloadPhotos = () => ({
     type: REQUEST_PRELOAD_PHOTOS
@@ -38,7 +37,7 @@ export const preloadPhotos = (photos, start, end) => dispatch => {
                     src: img.src,
                     caption: (<a className="pull-right" href={img.src} download="fluffy.jpeg">
                         Download
-                        <i className="fa fa-download" aria-hidden="true"></i>
+                        <i className="glyphicon glyphicon-download-alt" aria-hidden="true"></i>
                     </a>)}
             });
         });
