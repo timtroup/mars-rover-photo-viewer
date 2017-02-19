@@ -17,8 +17,7 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false // https://github.com/webpack/webpack/issues/1496
-            },
-            sourceMap: true
+            }
         })
     ],
     devtool: 'inline-source-map',
