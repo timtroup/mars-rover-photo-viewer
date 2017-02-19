@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Lightbox from 'react-images';
 import Gallery from 'react-photo-gallery';
 import Spinner from 'react-spin';
+import LoadMoreResults from './load-more-results';
 
 class ImageGallery extends Component{
 
@@ -25,10 +26,13 @@ class ImageGallery extends Component{
 
     render(){
         // no loading sign if its all loaded
-        if (this.props.photos.length && !this.props.isFetching){
+        if (this.props.photos.length){
             return(
                 <div>
                     {this.renderGallery()}
+                    <div>
+                        <LoadMoreResults />
+                    </div>
                 </div>
             );
         }

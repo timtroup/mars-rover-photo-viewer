@@ -14,7 +14,7 @@ const photoGalleryData = (state = {
             return {
                 ...state,
                 isFetching: false,
-                data: action.photos,
+                data: [...state.data, ...action.photos],
                 lastUpdated: action.receivedAt
             };
         default:
