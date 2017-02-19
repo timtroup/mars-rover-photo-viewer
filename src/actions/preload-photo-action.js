@@ -1,5 +1,7 @@
 export const REQUEST_PRELOAD_PHOTOS = 'REQUEST_PRELOAD_PHOTOS';
 export const RECEIVE_PRELOAD_PHOTOS = 'RECEIVE_PRELOAD_PHOTOS';
+import React from 'react';
+import 'font-awesome/css/font-awesome.css';
 
 export const requestPreloadPhotos = () => ({
     type: REQUEST_PRELOAD_PHOTOS
@@ -32,7 +34,12 @@ export const preloadPhotos = (photos, start, end) => dispatch => {
                 width: parseInt(img.width),
                 height: parseInt(img.height),
                 aspectRatio: parseFloat(img.width / img.height),
-                lightboxImage: {src: img.src, caption: 'Mars'}
+                lightboxImage: {
+                    src: img.src,
+                    caption: (<a className="pull-right" href={img.src} download="fluffy.jpeg">
+                        Download
+                        <i className="fa fa-download" aria-hidden="true"></i>
+                    </a>)}
             });
         });
         dispatch(receivePreloadPhotos(photoGalleryData))
