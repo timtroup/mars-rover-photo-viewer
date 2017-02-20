@@ -1,4 +1,4 @@
-import {REQUEST_PRELOAD_PHOTOS, RECEIVE_PRELOAD_PHOTOS} from '../actions/preload-photo-action'
+import {REQUEST_PRELOAD_PHOTOS, RECEIVE_PRELOAD_PHOTOS, DELETE_PHOTOS} from '../actions/preload-photo-action'
 
 const photoGalleryData = (state = {
     data: [],
@@ -16,6 +16,11 @@ const photoGalleryData = (state = {
                 isFetching: false,
                 data: [...state.data, ...action.photos],
                 lastUpdated: action.receivedAt
+            };
+        case DELETE_PHOTOS:
+            return {
+                ...state,
+                data: []
             };
         default:
             return state

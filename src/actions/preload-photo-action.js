@@ -1,5 +1,6 @@
 export const REQUEST_PRELOAD_PHOTOS = 'REQUEST_PRELOAD_PHOTOS';
 export const RECEIVE_PRELOAD_PHOTOS = 'RECEIVE_PRELOAD_PHOTOS';
+export const DELETE_PHOTOS = 'DELETE_PHOTOS';
 import React from 'react';
 
 export const requestPreloadPhotos = () => ({
@@ -10,6 +11,10 @@ export const receivePreloadPhotos = (json) => ({
     type: RECEIVE_PRELOAD_PHOTOS,
     photos: json,
     receivedAt: Date.now()
+});
+
+export const deletePhotos = () => ({
+    type: DELETE_PHOTOS
 });
 
 export const preloadPhotos = (photos, start, end) => dispatch => {
