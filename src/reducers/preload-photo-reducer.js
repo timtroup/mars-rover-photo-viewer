@@ -1,4 +1,11 @@
-import {REQUEST_PRELOAD_PHOTOS, RECEIVE_PRELOAD_PHOTOS, DELETE_PHOTOS} from '../actions/preload-photo-action'
+import {
+    REQUEST_PRELOAD_PHOTOS,
+    RECEIVE_PRELOAD_PHOTOS,
+    DELETE_PHOTOS
+} from '../actions/preload-photo-action'
+import {
+    RECEIVE_COLORIZE
+} from '../actions/colorize-action'
 
 const photoGalleryData = (state = {
     data: [],
@@ -21,6 +28,18 @@ const photoGalleryData = (state = {
             return {
                 ...state,
                 data: []
+            };
+        case RECEIVE_COLORIZE:
+            const index = state.data.indexOf(action.photo);
+            action.photo.src = 'data:image/jpeg;base64,' + action.base64Image;
+            action.photo.lightboxImage.src = 'data:image/jpeg;base64,' + action.base64Image;
+            return {
+                ...state,
+                data: [
+                    ...state.data.slice(0, index),
+                    Object.assign({}, state.data[index], action.photo),
+                    ...state.data.slice(index + 1)
+                ]
             };
         default:
             return state
