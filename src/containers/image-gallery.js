@@ -4,8 +4,13 @@ import Lightbox from 'react-images';
 import Gallery from 'react-photo-gallery';
 import Spinner from 'react-spin';
 import LoadMoreResults from './load-more-results';
+import ImageDownloader from '../components/image-downloader'
 
 class ImageGallery extends Component{
+
+    static contextTypes = {
+        store: React.PropTypes.object
+    }
 
     constructor(){
         super();
@@ -19,6 +24,11 @@ class ImageGallery extends Component{
     }
 
     renderGallery(){
+
+        this.props.photos.forEach(photo => {
+            photo.lightboxImage.caption = (<ImageDownloader imgSrc={photo.src}/>)
+        });
+
         return(
             <Gallery photos={this.props.photos} />
         );

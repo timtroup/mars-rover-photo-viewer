@@ -39,11 +39,8 @@ export const preloadPhotos = (photos, start, end) => dispatch => {
                 height: parseInt(img.height),
                 aspectRatio: parseFloat(img.width / img.height),
                 lightboxImage: {
-                    src: img.src,
-                    caption: (<a className="pull-right" href={img.src} download="fluffy.jpeg">
-                        Download
-                        <i className="glyphicon glyphicon-download-alt" aria-hidden="true"></i>
-                    </a>)}
+                    src: img.src
+                }
             });
         });
         dispatch(receivePreloadPhotos(photoGalleryData))
