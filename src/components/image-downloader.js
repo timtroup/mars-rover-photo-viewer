@@ -8,7 +8,7 @@ const ImageDownloader = ({ imgSrc }) => (
 );
 
 ImageDownloader.propTypes = {
-    img: PropTypes.string.isRequired
+    imgSrc: PropTypes.string.isRequired
 };
 
 export default ImageDownloader
