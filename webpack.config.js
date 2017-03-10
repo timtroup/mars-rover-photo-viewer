@@ -4,6 +4,11 @@ const webpack = require('webpack')
 
 module.exports = {
     entry: ['babel-polyfill', 'whatwg-fetch', './src/index.js'],
+    externals: {
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+    },
     output: {
         filename: 'bundle.[hash].js',
         publicPath: '/',
