@@ -19,8 +19,6 @@ const manifest = (state = {
                 photo_manifest: action.manifest.photo_manifest,
                 lastUpdated: action.receivedAt
             };
-        default:
-            return state
     }
 };
 
