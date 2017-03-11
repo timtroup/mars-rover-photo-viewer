@@ -31,7 +31,7 @@ const manifestByRover = (state = {}, action) => {
             return {
                 ...state,
                 [action.rover]: manifest(state[action.rover], action)
-            }
+            };
         default:
             return state
     }

@@ -21,7 +21,7 @@ describe('photos actions', () => {
     });
 
     it('creates RECEIVE_PHOTOS when fetching manifests has been done', () => {
-        nock('https://api.nasa.gov')
+        nock('https://api.nasa.gov/')
             .get('/mars-photos/api/v1/rovers/curiosity/photos')
             .query({
                 earth_date: '2017-03-09',
@@ -50,7 +50,7 @@ describe('photos actions', () => {
     });
 
     it('creates RECEIVE_PHOTOS when fetching manifests has been done', () => {
-        nock('https://api.nasa.gov')
+        nock('https://api.nasa.gov/')
             .get('/mars-photos/api/v1/rovers/curiosity/photos')
             .query({
                 earth_date: '2017-03-09',

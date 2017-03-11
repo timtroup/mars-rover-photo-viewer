@@ -49,4 +49,4 @@ describe('manifest actions', () => {
                 expect(store.getActions()).to.eql(expectedActions)
             })
     })
-})
+});
