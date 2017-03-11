@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+
 export const REQUEST_PHOTOS = 'REQUEST_PHOTOS';
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 

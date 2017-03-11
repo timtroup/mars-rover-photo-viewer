@@ -22,7 +22,10 @@ describe('manifest actions', () => {
 
     it('creates RECEIVE_MANIFEST when fetching manifests has been done', () => {
         nock('https://api.nasa.gov')
-            .get('/mars-photos/api/v1/manifests/curiosity?api_key=Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn')
+            .get('/mars-photos/api/v1/manifests/curiosity')
+            .query({
+                api_key: 'Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn'
+            })
             .reply(200, { photo_manifest: {} });
 
         const expectedActions = [
