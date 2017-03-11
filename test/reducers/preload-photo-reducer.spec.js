@@ -27,16 +27,16 @@ describe('photoGalleryData reducer', () => {
     it('should return correct state when RECEIVE_PRELOAD_PHOTOS', () => {
         expect(photoGalleryData(
             {
-                data: [],
+                data: [{id: 1}],
                 isFetching: false
             },
             {
                 type: 'RECEIVE_PRELOAD_PHOTOS',
-                photos: [],
+                photos: [{id: 2}],
                 receivedAt: 1458969960969
             }
         )).to.eql({
-            data: [],
+            data: [{id: 1}, {id: 2}],
             isFetching: false,
             lastUpdated: 1458969960969
         })
