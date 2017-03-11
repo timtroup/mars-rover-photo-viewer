@@ -1,7 +1,6 @@
 export const REQUEST_PRELOAD_PHOTOS = 'REQUEST_PRELOAD_PHOTOS';
 export const RECEIVE_PRELOAD_PHOTOS = 'RECEIVE_PRELOAD_PHOTOS';
 export const DELETE_PHOTOS = 'DELETE_PHOTOS';
-import React from 'react';
 
 export const requestPreloadPhotos = () => ({
     type: REQUEST_PRELOAD_PHOTOS
