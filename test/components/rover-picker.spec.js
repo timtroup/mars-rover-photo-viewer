@@ -1,6 +1,5 @@
 import React from 'react';
 import RoverPicker from '../../src/components/rover-picker';
-import sinon from 'sinon';
 
 describe('<RoverPicker />', () => {
     const props = {

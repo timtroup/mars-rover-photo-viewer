@@ -1,3 +1,5 @@
+import 'isomorphic-fetch';
+
 export const REQUEST_MANIFEST = 'REQUEST_MANIFEST';
 export const RECEIVE_MANIFEST = 'RECEIVE_MANIFEST';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import {selectRover} from '../../src/actions/select-rover-action';
 
 describe('selectRover', () => {

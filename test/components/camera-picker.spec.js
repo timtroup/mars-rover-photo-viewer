@@ -1,6 +1,5 @@
 import React from 'react';
 import CameraPicker from '../../src/components/camera-picker';
-import sinon from 'sinon';
 
 describe('<CameraPicker />', () => {
     const props = {
