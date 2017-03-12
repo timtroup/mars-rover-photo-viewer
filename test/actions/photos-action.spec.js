@@ -26,7 +26,7 @@ describe('photos actions', () => {
             .query({
                 earth_date: '2017-03-09',
                 camera: 'RHAZ',
-                api_key: 'Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn'
+                api_key: 'DEMO_KEY'
             })
             .reply(200, { photos: [] });
 
@@ -54,7 +54,7 @@ describe('photos actions', () => {
             .get('/mars-photos/api/v1/rovers/curiosity/photos')
             .query({
                 earth_date: '2017-03-09',
-                api_key: 'Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn'
+                api_key: 'DEMO_KEY'
             })
             .reply(200, { photos: [] });
 

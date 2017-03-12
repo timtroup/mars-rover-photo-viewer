@@ -24,7 +24,7 @@ describe('manifest actions', () => {
         nock('https://api.nasa.gov')
             .get('/mars-photos/api/v1/manifests/curiosity')
             .query({
-                api_key: 'Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn'
+                api_key: 'DEMO_KEY'
             })
             .reply(200, { photo_manifest: {} });
 

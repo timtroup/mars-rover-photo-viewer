@@ -1,9 +1,9 @@
 import 'isomorphic-fetch';
+import {API_KEY} from '../util/constants';
 
 export const REQUEST_PHOTOS = 'REQUEST_PHOTOS';
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 
-const API_KEY = 'Y5T3wqwLAJUHWXyDlJtQGeK0anjuaye0QLtgTCyn';
 const ROOT_URL =`https://api.nasa.gov/mars-photos/api/v1/rovers`;
 
 export const requestPhotos = rover => ({
