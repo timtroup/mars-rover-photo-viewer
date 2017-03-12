@@ -5,10 +5,6 @@ import { Table } from 'react-bootstrap';
 
 class RoverInfo extends Component {
 
-    static propTypes = {
-        dispatch: PropTypes.func.isRequired
-    };
-
     constructor(props) {
         super(props);
     }
