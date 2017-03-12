@@ -67,6 +67,7 @@ describe('<RoverInfo />', () => {
             <td>active</td>
         )).to.eql(true);
 
+        //TODO mystery as to why this test fails as inspecting the html shows this element exists
         // expect(wrapper.containsMatchingElement(
         //     <td>308058</td>
         // )).to.eql(true);
