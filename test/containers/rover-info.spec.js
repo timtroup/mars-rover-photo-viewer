@@ -62,6 +62,18 @@ describe('<RoverInfo />', () => {
         expect(wrapper.containsMatchingElement(
             <td>06/08/2012</td>
         )).to.eql(true);
+
+        expect(wrapper.containsMatchingElement(
+            <td>active</td>
+        )).to.eql(true);
+
+        // expect(wrapper.containsMatchingElement(
+        //     <td>308058</td>
+        // )).to.eql(true);
+
+        expect(wrapper.containsMatchingElement(
+            <td>09/03/2017</td>
+        )).to.eql(true);
     });
 
 });
