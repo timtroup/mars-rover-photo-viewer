@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
-class DateSelector extends Component {
+export class DateSelector extends Component {
 
     constructor(props) {
         super(props);
@@ -58,4 +58,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps)(DateSelector);
+export default connect(mapStateToProps, null, null, { withRef: true })(DateSelector);
